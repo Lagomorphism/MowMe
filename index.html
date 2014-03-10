@@ -1,0 +1,53 @@
+<html>
+	<head>
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+		<script src="script.js"></script>
+		<script src="worker.js"></script>
+		<script src="customer.js"></script>
+	</head>
+	<body ng-app="MowMeModule">
+		<hr />
+		<div ng-controller="MowMeController">
+			<div>
+				<button ng-click="addSampleUser()">Add sample user</button>
+				<pre>{{sampleUser | json}}</pre>
+			</div>
+			<div>
+				<button ng-click="login()">Login</button>
+				<div >
+					{{loadActiveUserInfo()}}
+				</div>
+				<pre>{{activeUser.email}}</pre>
+			</div>
+		</div>
+		<div ng-controller="PromiseAPIDemoController">
+			<div>
+				<button ng-click="test()">Test</button>
+			</div>
+			<div>
+				{{messages}}
+			</div>
+		</div>
+		<div ng-controller="QDemoController">
+			<div>
+				<button ng-click="initialize()">Initialize</button>
+				<button ng-click="doWork()">Do work</button>
+				<button ng-click="slackOff()">Slack off</button>
+			</div>
+			<div>
+				{{messages}}
+			</div>
+		</div>
+		<div ng-controller="ExampleWithProviderController" style="border: 1px solid #000;">
+			<h2>Provider</h2>
+			<div>
+				<button ng-click="initialize()">Initialize from provider</button>
+				<button ng-click="doWork()">Do work</button>
+				<button ng-click="slackOff()">Slack off</button>
+			</div>
+			<div>
+				{{message}}
+			</div>
+		</div>
+	</body>
+</html>
